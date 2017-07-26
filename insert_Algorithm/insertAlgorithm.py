@@ -1,11 +1,13 @@
-def insertAlgorithm( lis ):
-    for i,x in enumerate(lis):
-        for j,y in enumerate(lis[:i-len(lis)]):
-            if(x < y):
-                temp = lis[i]
-                lis[i] = lis[j]
-                lis[j] = temp
-
+def insert_sort(lis):
+    length = len(lis)
+    for i in range(1,length-1):
+        j = i - 1
+        x = lis[i]
+        while j > 0:
+            if(x < lis[j]):
+                lis[j+1] = lis[j]
+                lis[j] = x
+            j -= 1
 
 
 
@@ -13,5 +15,5 @@ def insertAlgorithm( lis ):
 
 
 lis = [8,5,2,3,0,5,8,7,854,6,8,64,65,46,54]
-insertAlgorithm(lis)
+insert_sort(lis)
 print(lis)
